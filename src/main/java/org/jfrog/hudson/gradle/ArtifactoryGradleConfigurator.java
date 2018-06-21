@@ -548,7 +548,7 @@ public class ArtifactoryGradleConfigurator extends BuildWrapper implements Deplo
                             writer.generateInitScript(), false);
                     ActionableHelper.deleteFilePathOnExit(initScript);
                     initScriptPath = initScript.getRemote();
-                    initScriptPath = initScriptPath.replace('\\', '/');
+                    initScriptPath = "'"+initScriptPath.replace('\\', '/')+"'";
                     env.put("ARTIFACTORY_INIT_SCRIPT", " --init-script " + initScriptPath);
 
                 } catch (Exception e) {
