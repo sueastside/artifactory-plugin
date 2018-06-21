@@ -169,7 +169,7 @@ public class ArtifactoryGradleBuild extends AbstractStepImpl {
             if (!step.getGradleBuild().isUsesPlugin()) {
                 try {
                     initScriptPath = createInitScript();
-                    switches += " --init-script " + initScriptPath;
+                    switches += " --init-script '" + initScriptPath+"'";
                 } catch (Exception e) {
                     listener.getLogger().println("Error occurred while writing Gradle Init Script: " + e.getMessage());
                     build.setResult(Result.FAILURE);
